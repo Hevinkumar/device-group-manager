@@ -12,6 +12,12 @@
 .header{
     display: flex;
     align-items: center;
+    background-color: cornsilk;
+    padding: 10px;
+}
+.header-cramb{
+    display: flex;
+    align-items: center;
     margin-top: 10px;
     /* border-top: 2px solid black; */
     border-bottom: 1px solid var(--light-gray);
@@ -41,3 +47,134 @@
     background-color: white;
 
 }
+.popup-model{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    background-color: rgba(117, 114, 114,0.6);
+    z-index: 180;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+}
+.popup-container{
+    margin:200px;
+    border-radius: 5px;
+    background-color: white;
+    width: 80%;
+    height: auto;   
+}
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+
+    /* align-items:space-between; */
+    
+}
+.search-bar{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom: 1px solid var(--light-gray);
+
+}
+.dropdown-selector{
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    border: none;
+    border-right: 1px solid var(--light-gray);
+
+}
+.input-box{
+    border: none;
+    width: 30%;
+    padding-left: 5px;
+}
+.cls-button{
+    font-weight: 1000;
+    cursor: pointer;
+    /* padding: 5px; */
+    display: block;
+    width: 35px;
+    height:35px;
+    text-align: center;
+    /* width: 5px;
+    height: 5px; */
+
+}
+.cls-button:hover{
+    /* padding:1px; */
+    background-color: white;
+    border-radius: 50%;
+}
+.bt-radious{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.bb-radious{
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:  5px;
+}
+
+
+/* this is popup model designs */
+.popup-model-content{
+    display: flex;
+    /* align-items:flex-start; */
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    min-height:60vh;
+
+}
+.group-container{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 200px;
+    border: 1px solid var(--light-gray);
+    margin:30px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: -5px 5px 5px 0px rgba(130, 123, 123,0.3);
+}
+.file{
+    height: 100%;
+    width :30%;
+    /* margin: 10px; */
+    font-size: 30px;
+}
+.group-component{
+    display: flex;
+    flex-direction: column;
+}
+
+/* this is footer designs */
+.popup-model-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:10vh;
+    background-color: cornsilk;
+    
+}
+.footer-select-btn{
+    padding: 10px;
+    background-color: rgb(74, 150, 232);
+    border: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
