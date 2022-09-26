@@ -1,8 +1,10 @@
+
+{{log this.model "model"}}
 <div class="popup-model bt-radious bb-radious">
     <div class="popup-container">
         <div class="header popup-header bt-radious">
-            <span > Group </span> 
-            <span class="cls-button">&#215;</span>
+            <span > Select {{this.type}} </span> 
+            <span class="cls-button" onclick={{action "close"}}>&#215;</span>
         </div>
         <div class="search-bar">
             <select class="select dropdown-selector">
