@@ -1,0 +1,43 @@
+:root{
+    --light-gray:rgb(173, 170, 170);
+    --success:rgb(7, 182, 7);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    /* border-top: 2px solid black; */
+    border-bottom: 1px solid var(--light-gray);
+
+}
+.padding-h{
+    padding: 5px;
+}
+.bg-color{
+    background-color: white;
+}
+
+.btn-model{
+    display: flex;
+    align-items:flex-start;
+    padding:5px;
+
+}
+.btn{
+    height: max-content;
+    max-width: max-content;
+    padding: 5px;
+    margin:1rem;
+
+}
+.btn-light{
+    background-color: white;
+
+}
