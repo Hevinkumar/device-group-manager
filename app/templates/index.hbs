@@ -10,10 +10,10 @@
 </div>
 {{!-- {{log this.model}} --}}
 {{#if this.groupModel}}
-{{popup-model type=model groupModel=this.groupModel model=this.model}}
+{{popup-model type=this.type groupModel=this.groupModel model=this.model}}
 {{/if}}
 {{#if this.deviceModel}}
-{{popup-model type=model deviceModel=this.deviceModel model=this.model}}
+{{popup-model type=this.type deviceModel=this.deviceModel model=this.model}}
 {{/if}}
 
 {{outlet}}

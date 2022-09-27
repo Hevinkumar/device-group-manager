@@ -9,12 +9,12 @@ export default Controller.extend({
         openGroups(){
             this.set("deviceModel",false);
             this.set("groupModel",true);
-            this.set("model","groups");
+            this.set("type","groups");
         },
         openDevices(){
             this.set("groupModel",false);
             this.set("deviceModel",true);
-            this.set("model","devices");
+            this.set("type","devices");
 
         }
 
