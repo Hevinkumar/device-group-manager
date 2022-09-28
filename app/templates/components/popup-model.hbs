@@ -8,11 +8,24 @@
         </div>
         <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <select class="select dropdown-selector">
-                <option value="Groups">Group</option>
-                <option value="Devices">Devices</option>
+            {{#if this.component_type}}
+            <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
+                <option value="">All</option>
+                {{#each this.category as |item|}}
+                <option value="{{item}}">{{item}}</option>
+                {{/each}}
             </select>
-            <input class="input-box" type="text" placeholder="Search by Device Name and Group Name">
+            {{else}}
+            <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
+                <option value="">All</option>
+                {{#each this.category as |item|}}
+                <option value="{{item}}">{{item}}</option>
+                {{/each}}
+
+            </select>
+            {{/if}}
+
+            {{input class="input-box" type="text" placeholder="Search..." key-up=(action 'handleFilterEntry') value=value}}
         </div>
         <div class="popup-model-content">
             {{#if this.component_type}}
@@ -22,7 +35,7 @@
                 <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.devices.length}} devices</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
                 </div>
 
             </div>
@@ -31,7 +44,7 @@
                 <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.devices.length}} devices</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
                 </div>
 
             </div>
@@ -45,7 +58,7 @@
                 <i class="fa-brands fa-{{item.os}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.username}} devices</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>
                 </div>
 
             </div>
@@ -54,7 +67,7 @@
                 <i class="fa-brands fa-{{item.os}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.username}} devices</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>
                 </div>
 
             </div>
@@ -67,9 +80,9 @@
         </div>
         <div class="popup-model-footer bb-radious">
             {{#if this.component_type}}
-            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedGroupItems.length}}">
+            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedGroupItems.length}}" onclick={{action "select"}}>
             {{else}}
-            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedDeviceItems.length}}">
+            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedDeviceItems.length}}" onclick={{action "select"}}>
             {{/if}}
 
         </div>

@@ -4,70 +4,70 @@ export const devices=[
         group:"HR Department",
         device:"apple-hevin",
         os:"android",
-        username:"user-111"
+        name:"riyas"
     },
     {
         id:1,
         group:"Deveolpment",
         device:"vivo-1012",
         os:"apple",
-        username:"user-112"
+        name:"riyas"
     },
     {
         id:2,
         group:"Support",
         device:"xiami-1212",
         os:"windows",
-        username:"user-113"
+        name:"selva"
     },
     {
         id:3,
         group:"Sales",
         device:"Rmx-100",
         os:"android",
-        username:"user-114"
+        name:"arun"
     },
     {
         id:4,
         group:"Deveolpment",
         device:"blockberry-111",
         os:"apple",
-        username:"user-114"
+        name:"gowtham-114"
     },
     {
         id:5,
         group:"Margeting",
         device:"oppo-reno",
         os:"windows",
-        username:"user-115"
+        name:"selva-115"
     },
     {
         id:6,
         group:"Support",
         device:"samsung-hevin",
         os:"android",
-        username:"user-119"
+        name:"naveen-119"
     },
     {
         id:7,
         group:"Deveolpment",
         device:"samsung",
         os:"apple",
-        username:"user-116"
+        name:"swaran-116"
     },
     {
         id:8,
         group:"HR Department",
         device:"hevin",
         os:"windows",
-        username:"user-117"
+        name:"unknown-117"
     },
     {
         id:9,
         group:"Margeting",
         device:"samsung-hevin",
         os:"android",
-        username:"user-118"
+        name:"user-118"
     }
 
 ]

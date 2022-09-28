@@ -41,6 +41,7 @@
     max-width: max-content;
     padding: 5px;
     margin:1rem;
+    cursor: pointer;
 
 }
 .btn-light{
@@ -106,6 +107,7 @@
 .dropdown-selector{
     padding-top:10px;
     padding-bottom: 10px;
+    padding-right: 40px;
     margin-right: 10px;
     border: none;
     border-right: 1px solid var(--light-gray);
@@ -150,6 +152,7 @@
     flex-wrap: wrap;
     /* align-items:flex-start; */
     justify-content: center;
+    align-content: start;
     align-items: start;
     width: 100%;
     min-height:60vh;
@@ -158,15 +161,16 @@
 .group-container{
     display: flex;
     align-items: center;
-    justify-content:center;
+    /*justify-content:center; */
+    align-content: start;
     width: 200px;
     border: 1px solid var(--light-gray);
     margin-top:20px;
     margin-left: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: whitesmoke;
-    box-shadow: -5px 5px 5px 0px rgba(130, 123, 123,0.3);
+    background-color: white;
+    /* box-shadow: -5px 5px 5px 0px rgba(130, 123, 123,0.3); */
     cursor: pointer;
 }
 .selected{
