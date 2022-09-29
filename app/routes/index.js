@@ -7,7 +7,16 @@ import {hash} from "rsvp";
 export default Route.extend({
     model(){
         return hash(
-            { devices:devices,
-                groups:groups});
+
+            { 
+                devices:devices,
+                groups:groups,
+                popupGroups:false,
+                popupDevices:false,
+            });
+    },
+
+    afterModel(){
+        
     }
 });

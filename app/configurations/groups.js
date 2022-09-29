@@ -3,22 +3,7 @@ export const groups = [
         id: 0,
         title: "HR Department",
         subtitle:"",
-        device: [
-            {
-                id: 0,
-                group: "HR Department",
-                device: "apple-hevin",
-                os: "android",
-                usertitle: "user-111"
-            },
-            {
-                id: 1,
-                group: "HR Department",
-                device: "hevin",
-                os: "windows",
-                usertitle: "user-117"
-            },
-        ],
+        data: [0,1],
         icon:"fa-sharp fa-solid fa-folder-closed"
 
 
@@ -26,15 +11,8 @@ export const groups = [
     {
         id: 1,
         title: "Sales",
-        device: [
-            {
-                id: 0,
-                group: "Sales",
-                device: "Rmx-100",
-                os: "android",
-                usertitle: "user-114"
-            },
-        ],
+        subtitle:"",
+        data: [3],
         icon:"fa-sharp fa-solid fa-folder-closed"
 
 
@@ -42,23 +20,8 @@ export const groups = [
     {
         id: 2,
         title: "Margeting",
-        device: [
-            {
-                id: 0,
-                group: "Margeting",
-                device: "samsung-hevin",
-                os: "android",
-                usertitle: "user-118"
-            },
-            {
-                id: 1,
-                group: "Margeting",
-                device: "oppo-reno",
-                os: "windows",
-                usertitle: "user-115"
-            },
-        ],
-        
+        subtitle:"",
+        data:[2,9],
         icon:"fa-sharp fa-solid fa-folder-closed"
 
 
@@ -66,22 +29,8 @@ export const groups = [
     {
         id: 3,
         title: "Support",
-        device: [
-            {
-                id: 0,
-                group: "Support",
-                device: "samsung-hevin",
-                os: "android",
-                usertitle: "user-119"
-            },
-            {
-                id: 1,
-                group: "Support",
-                device: "xiami-1212",
-                os: "windows",
-                usertitle: "user-113"
-            },
-        ],
+        subtitle:"",
+        data:[4,5],
         icon:"fa-sharp fa-solid fa-folder-closed"
 
 
@@ -89,29 +38,8 @@ export const groups = [
     {
         id: 4,
         title: "Development",
-        device: [
-            {
-                id:0,
-                group:"Deveolpment",
-                device:"blockberry-111",
-                os:"apple",
-                usertitle:"user-114"
-            },
-            {
-                id:1,
-                group:"Deveolpment",
-                device:"samsung",
-                os:"apple",
-                usertitle:"user-116"
-            },
-            {
-                id:2,
-                group:"Deveolpment",
-                device:"vivo-1012",
-                os:"apple",
-                usertitle:"user-112"
-            },
-        ],
+        subtitle:"",
+        data: [6,7,8],
         icon:"fa-sharp fa-solid fa-folder-closed"
 
 
