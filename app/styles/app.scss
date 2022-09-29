@@ -32,6 +32,9 @@
 .bg-color-white{
     background-color: white;
 }
+.blue{
+    color: blue;
+}
 
 .btn-model{
     display: flex;
@@ -154,11 +157,13 @@
     display: flex;
     flex-wrap: wrap;
     /* align-items:flex-start; */
-    justify-content: center;
+    // justify-content: center;
     align-content: start;
     align-items: start;
     width: 100%;
     min-height:60vh;
+    padding-left:20px;
+    padding-right: 20px;
 
 }
 .group-container{

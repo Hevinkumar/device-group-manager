@@ -13,7 +13,7 @@ export default Component.extend({
     selectedGroupItems: A([]),
     selectedDeviceItems: A([]),
     component_type: false,
-    modeldata: null,
+    // modeldata: null,
     displaydata: A([]),
     backupdata: A([]),
     category: A([]),
@@ -33,7 +33,7 @@ export default Component.extend({
         selected: null,
 
     },
-    groups: A([]),
+    // groups: A([]),
     selectedGroups: A([]),
     // devices:A([]),
 
