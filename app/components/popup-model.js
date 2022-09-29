@@ -196,6 +196,7 @@ export default Component.extend({
 
                 })
                 this.set("displaydata", temp);
+                this.set("backupdata",this.displaydata);
                 localStorage.setItem("selectedGroupItems", JSON.stringify(this.selectedGroupItems));
                 // console.log(this.displaydata);
             }
@@ -238,6 +239,7 @@ export default Component.extend({
 
                 })
                 this.set("displaydata", temp);
+                this.set("backupdata",this.displaydata);
                 localStorage.setItem("selectedDeviceItems", JSON.stringify(this.selectedDeviceItems));
                 // console.log(this.groups);
             }
@@ -251,13 +253,13 @@ export default Component.extend({
                 let temp = this.value;
                 let filteredResults = this.displaydata.filter(i =>{
                     let name;
-                    name=i.name;
-                    // if (this.component_type){
-                    //     name = i.name;
-                    // }
-                    // else{
-                    //     name=i.os;
-                    // }
+                    // name=i.name;
+                    if (this.component_type){
+                        name = i.name;
+                    }
+                    else{
+                        name=i.device;
+                    }
                     return (name.toLowerCase()).indexOf(temp.toLowerCase()) !== -1;
 
                 })
