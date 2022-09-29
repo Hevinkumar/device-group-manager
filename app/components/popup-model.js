@@ -133,11 +133,13 @@ export default Component.extend({
                 this.set("selectedGroupItems",A([]));
                 localStorage.setItem("selectedGroupItems",JSON.stringify(this.selectedGroupItems));
                 this.set("displaydata",this.model);
+                this.set("groupModel", !this.get("groupModel"));
             }
             else{
                 this.set("selectedDeviceItems",A([]));
                 localStorage.setItem("selectedDeviceItems",JSON.stringify(this.selectedDeviceItems));
                 this.set("displaydata",this.model);
+                this.set("deviceModel", !this.get("deviceModel"));
             }
             
 

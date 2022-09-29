@@ -12,7 +12,7 @@
 .header{
     display: flex;
     align-items: center;
-    background-color:white;
+    // background-color:white;
     padding: 10px;
 }
 .header-cramb{
@@ -28,6 +28,9 @@
 }
 .bg-color{
     background-color: lightgray;
+}
+.bg-color-white{
+    background-color: white;
 }
 
 .btn-model{
@@ -98,7 +101,7 @@
     padding-bottom: 10px;
     padding-left: 10px;
     border-bottom: 1px solid var(--light-gray);
-    background-color: white;
+    // background-color: white;
 
 }
 .search-icon{
@@ -169,7 +172,7 @@
     margin-left: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: white;
+    // background-color: white;
     /* box-shadow: -5px 5px 5px 0px rgba(130, 123, 123,0.3); */
     cursor: pointer;
 }
@@ -194,7 +197,7 @@
     align-items: center;
     width: 100%;
     height:10vh;
-    background-color: white;
+    // background-color: white;
     
 }
 .footer-select-btn{

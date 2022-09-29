@@ -2,11 +2,11 @@
 {{!-- {{log this.model "model"}} --}}
 <div class="popup-model bt-radious bb-radious">
     <div class="popup-container">
-        <div class="header popup-header bt-radious">
+        <div class="header popup-header bt-radious bg-color-white">
             <span > Select {{this.type}} </span> 
             <span class="cls-button" onclick={{action "close"}}>&#215;</span>
         </div>
-        <div class="search-bar">
+        <div class="search-bar bg-color-white">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             {{#if this.component_type}}
             <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
@@ -31,7 +31,7 @@
             {{#if this.component_type}}
             {{#each this.displaydata as |item|}}
             {{#if item.selected}}
-            <div class="group-container selected" onclick={{action "selectToggle" item}}>
+            <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
                 <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
@@ -40,7 +40,7 @@
 
             </div>
             {{else}}
-            <div class="group-container " onclick={{action "selectToggle" item}}>
+            <div class="group-container bg-color-white " onclick={{action "selectToggle" item}}>
                 <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
@@ -54,7 +54,7 @@
             {{else}}
             {{#each this.displaydata as |item|}}
             {{#if item.selected}}
-            <div class="group-container selected" onclick={{action "selectToggle" item}}>
+            <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
                 <i class="fa-brands fa-{{item.os}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
@@ -63,7 +63,7 @@
 
             </div>
             {{else}}
-            <div class="group-container" onclick={{action "selectToggle" item}}>
+            <div class="group-container bg-color-white" onclick={{action "selectToggle" item}}>
                 <i class="fa-brands fa-{{item.os}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
@@ -78,7 +78,7 @@
             {{/if}}
 
         </div>
-        <div class="popup-model-footer bb-radious">
+        <div class="popup-model-footer bg-color-white bb-radious">
             {{#if this.component_type}}
             <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedGroupItems.length}}" onclick={{action "select"}}>
             {{else}}
