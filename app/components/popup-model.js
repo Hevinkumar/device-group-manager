@@ -22,6 +22,7 @@ export default Component.extend({
         name: "",
         data: A([]),
         device: A([]),
+        icon:"",
         selected: false,
     },
     deviceData: {
@@ -30,7 +31,9 @@ export default Component.extend({
         device: "",
         os: "",
         name: "",
-        selected: null,
+        selected: false,
+        icon:"",
+
 
     },
     // groups: A([]),
@@ -50,11 +53,12 @@ export default Component.extend({
             console.log(this.model);
             let temp = A([]);
             this.model.forEach(data => {
-                this.set("tempData", { id: null, name: "", data: A([]), device: A([]), selected: false });
+                this.set("tempData", { id: null, name: "", data: A([]), device: A([]), selected: false ,icon:""});
                 this.tempData.id = data.id;
                 this.tempData.name = data.name;
                 this.tempData.device = data.device;
                 this.tempData.data.pushObject(data);
+                this.tempData.icon = data.icon;
                 if (this.selectedGroupItems.length != 0) {
                     this.selectedGroupItems.forEach(ele => {
                         if (data.id == ele.id) {
@@ -66,7 +70,7 @@ export default Component.extend({
                     this.tempData.selected = false;
                 }
                 temp.pushObject(this.tempData);
-                this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false });
+                this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false ,icon:""});
                 if (!(this.category.includes(data.name))) {
                     this.category.pushObject(data.name);
                 }
@@ -87,12 +91,13 @@ export default Component.extend({
             // let count = 0;
             this.model.forEach(data => {
                 // console.log(data);
-                this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null });
+                this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null,icon:"" });
                 this.deviceData.id = data.id;
                 this.deviceData.os = data.os;
                 this.deviceData.name = data.name;
                 this.deviceData.device = data.device;
                 this.deviceData.group = data.group;
+                this.deviceData.icon=data.icon;
                 // console.log(this.deviceData);
                 if (this.selectedDeviceItems.length != 0) {
                     this.selectedDeviceItems.forEach(ele => {
@@ -107,7 +112,7 @@ export default Component.extend({
                 temp.pushObject(this.deviceData);
 
                 // console.log(temp);
-                this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null });
+                this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null,icon:"" });
                 if (!(this.category.includes(data.os))) {
                     this.category.pushObject(data.os);
                 }
@@ -159,11 +164,12 @@ export default Component.extend({
                 let temp = A([]);
                 this.displaydata.forEach(ele => {
                     if (ele === item) {
-                        this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false });
+                        this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false,icon:"" });
                         this.tempData.id = item.id;
                         this.tempData.name = item.name;
                         this.tempData.device = item.device;
                         this.tempData.data.pushObject(item);
+                        this.tempData.icon=item.icon;
                         this.tempData.selected = !(item.selected);
                         if (this.tempData.selected) {
                             if (this.selectedGroupItems) {
@@ -187,7 +193,7 @@ export default Component.extend({
                         }
                         // e.set("selected",true);
                         temp.pushObject(this.tempData);
-                        this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false });
+                        this.set("tempData", { id: null, name: "", data: A([]), devices: A([]), selected: false ,icon:""});
                         // console.log(temp);
                     }
                     else {
@@ -204,12 +210,13 @@ export default Component.extend({
                 // console.log(this.groups);
                 this.displaydata.forEach(ele => {
                     if (ele == item) {
-                        this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null })
+                        this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null, icon:"" })
                         this.deviceData.id = ele.id;
                         this.deviceData.os = ele.os;
                         this.deviceData.name = ele.name;
                         this.deviceData.device = ele.device;
                         this.deviceData.group = ele.group;
+                        this.deviceData.icon = ele.icon;
                         this.deviceData.selected = !(ele.selected);
                         if (this.deviceData.selected) {
                             if (this.selectedDeviceItems) {
@@ -230,7 +237,7 @@ export default Component.extend({
                             // console.log(this.selectedDeviceItems);
                         }
                         temp.pushObject(this.deviceData);
-                        this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null })
+                        this.set("deviceData", { id: null, group: "", device: "", os: "", name: "", selected: null,icon:"" })
                     }
                     else {
                         temp.pushObject(ele);

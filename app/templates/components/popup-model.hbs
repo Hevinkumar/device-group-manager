@@ -32,7 +32,8 @@
             {{#each this.displaydata as |item|}}
             {{#if item.selected}}
             <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
-                <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
+                {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
+                <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
                     <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
@@ -41,7 +42,8 @@
             </div>
             {{else}}
             <div class="group-container bg-color-white " onclick={{action "selectToggle" item}}>
-                <i class="fa-sharp fa-solid fa-folder-closed icon"></i>
+                {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
+                <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.name}}</span>
                     <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
@@ -55,7 +57,7 @@
             {{#each this.displaydata as |item|}}
             {{#if item.selected}}
             <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
-                <i class="fa-brands fa-{{item.os}} icon"></i>
+                <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
                     <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>
@@ -64,7 +66,7 @@
             </div>
             {{else}}
             <div class="group-container bg-color-white" onclick={{action "selectToggle" item}}>
-                <i class="fa-brands fa-{{item.os}} icon"></i>
+                <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
                     <span>{{item.device}}</span>
                     <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>

@@ -1,73 +1,83 @@
 export const devices=[
     {
         id:0,
-        group:"HR Department",
-        device:"apple-hevin",
-        os:"android",
-        name:"riyas"
+        // title:"HR Department",
+        title:"apple-hevin",
+        type:"android",
+        subtitle:"riyas",
+        icon:"fa-brands fa-android"
     },
     {
         id:1,
-        group:"Deveolpment",
-        device:"vivo-1012",
-        os:"apple",
-        name:"riyas"
+        // group:"Deveolpment",
+        title:"vivo-1012",
+        type:"itype",
+        subtitle:"riyas",
+        icon:"fa-brands fa-apple"
     },
     {
         id:2,
-        group:"Support",
-        device:"xiami-1212",
-        os:"windows",
-        name:"selva"
+        // group:"Support",
+        title:"xiami-1212",
+        type:"windows",
+        subtitle:"selva",
+        icon:"fa-brands fa-windows"
     },
     {
         id:3,
-        group:"Sales",
-        device:"Rmx-100",
-        os:"android",
-        name:"arun"
+        // group:"Sales",
+        title:"Rmx-100",
+        type:"android",
+        subtitle:"arun",
+        icon:"fa-brands fa-android"
     },
     {
         id:4,
-        group:"Deveolpment",
-        device:"blockberry-111",
-        os:"apple",
-        name:"gowtham-114"
+        // group:"Deveolpment",
+        title:"blockberry-111",
+        type:"itype",
+        subtitle:"gowtham-114",
+        icon:"fa-brands fa-apple"
     },
     {
         id:5,
-        group:"Margeting",
-        device:"oppo-reno",
-        os:"windows",
-        name:"selva-115"
+        // group:"Margeting",
+        title:"oppo-reno",
+        type:"windows",
+        subtitle:"selva-115",
+        icon:"fa-brands fa-windows"
     },
     {
         id:6,
-        group:"Support",
-        device:"samsung-hevin",
-        os:"android",
-        name:"naveen-119"
+        // group:"Support",
+        title:"samsung-hevin",
+        type:"android",
+        subtitle:"naveen-119",
+        icon:"fa-brands fa-android"
     },
     {
         id:7,
-        group:"Deveolpment",
-        device:"samsung",
-        os:"apple",
-        name:"swaran-116"
+        // group:"Deveolpment",
+        title:"samsung",
+        type:"itype",
+        subtitle:"swaran-116",
+        icon:"fa-brands fa-apple"
     },
     {
         id:8,
-        group:"HR Department",
-        device:"hevin",
-        os:"windows",
-        name:"unknown-117"
+        // group:"HR Department",
+        title:"hevin",
+        type:"windows",
+        subtitle:"unknown-117",
+        icon:"fa-brands fa-windows"
     },
     {
         id:9,
-        group:"Margeting",
-        device:"samsung-hevin",
-        os:"android",
-        name:"user-118"
+        // group:"Margeting",
+        title:"samsung-hevin",
+        type:"android",
+        subtitle:"user-118",
+        icon:"fa-brands fa-android"
     }
 
 ]
