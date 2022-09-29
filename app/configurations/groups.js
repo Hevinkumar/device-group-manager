@@ -4,7 +4,8 @@ export const groups = [
         title: "HR Department",
         subtitle:"",
         data: [0,1],
-        icon:"fa-sharp fa-solid fa-folder-closed"
+        icon:"fa-sharp fa-solid fa-folder-closed",
+        type:"Device group"
 
 
     },
@@ -13,7 +14,8 @@ export const groups = [
         title: "Sales",
         subtitle:"",
         data: [3],
-        icon:"fa-sharp fa-solid fa-folder-closed"
+        icon:"fa-sharp fa-solid fa-folder-closed",
+        type:"User group"
 
 
     },
@@ -22,7 +24,8 @@ export const groups = [
         title: "Margeting",
         subtitle:"",
         data:[2,9],
-        icon:"fa-sharp fa-solid fa-folder-closed"
+        icon:"fa-sharp fa-solid fa-folder-closed",
+        type:"User group"
 
 
     },
@@ -31,7 +34,8 @@ export const groups = [
         title: "Support",
         subtitle:"",
         data:[4,5],
-        icon:"fa-sharp fa-solid fa-folder-closed"
+        icon:"fa-sharp fa-solid fa-folder-closed",
+        type:"User group"
 
 
     },
@@ -40,7 +44,8 @@ export const groups = [
         title: "Development",
         subtitle:"",
         data: [6,7,8],
-        icon:"fa-sharp fa-solid fa-folder-closed"
+        icon:"fa-sharp fa-solid fa-folder-closed",
+        type:"Device group"
 
 
     }

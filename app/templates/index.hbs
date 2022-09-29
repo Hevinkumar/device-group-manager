@@ -9,11 +9,9 @@
 <button class="btn btn-light" onclick={{action "openDevices"}}>Devices</button>
 </div>
 {{!-- {{log this.model}} --}}
-{{#if this.groupModel}}
-{{popup-model type=this.type groupModel=this.groupModel model=this.model.groups}}
-{{/if}}
-{{#if this.deviceModel}}
-{{popup-model type=this.type deviceModel=this.deviceModel model=this.model.devices}}
+
+{{#if this.modelFlag}}
+{{popup-model type=this.type component=this.modelFlag model=this.modelData category=this.category}}
 {{/if}}
 
 {{outlet}}

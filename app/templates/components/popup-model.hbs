@@ -8,7 +8,14 @@
         </div>
         <div class="search-bar bg-color-white">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            {{#if this.component_type}}
+            <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
+                <option value="">All</option>
+                {{log this.category "category"}}
+                {{#each this.category as |item|}}
+                <option value="{{item}}">{{item}}</option>
+                {{/each}}
+            </select>
+            {{!-- {{#if this.component_type}}
             <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
                 <option value="">All</option>
                 {{#each this.category as |item|}}
@@ -23,20 +30,21 @@
                 {{/each}}
 
             </select>
-            {{/if}}
+            {{/if}} --}}
 
             {{input class="input-box" type="text" placeholder="Search..." key-up=(action 'handleFilterEntry') value=value}}
         </div>
         <div class="popup-model-content">
-            {{#if this.component_type}}
+            {{!-- {{#if this.component_type}} --}}
+            {{!-- {{log this.displaydata}} --}}
             {{#each this.displaydata as |item|}}
             {{#if item.selected}}
             <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
                 {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
                 <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
-                    <span class="group-name">{{item.name}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
+                    <span class="group-name">{{item.title}}</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.subtitle}}</span>
                 </div>
 
             </div>
@@ -45,16 +53,16 @@
                 {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
                 <i class="{{item.icon}} icon"></i>
                 <div class="group-component">
-                    <span class="group-name">{{item.name}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.device.length}} devices</span>
+                    <span class="group-name">{{item.title}}</span>
+                    <span><i class="fa-solid fa-mobile"></i> {{item.subtitle}}</span>
                 </div>
 
             </div>
              {{/if}}
                 
             {{/each}}
-            {{else}}
-            {{#each this.displaydata as |item|}}
+            {{!-- {{else}} --}}
+            {{!-- {{#each this.displaydata as |item|}}
             {{#if item.selected}}
             <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
                 <i class="{{item.icon}} icon"></i>
@@ -77,15 +85,15 @@
 
 
             {{/each}}
-            {{/if}}
+            {{/if}} --}}
 
         </div>
         <div class="popup-model-footer bg-color-white bb-radious">
-            {{#if this.component_type}}
-            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedGroupItems.length}}" onclick={{action "select"}}>
-            {{else}}
-            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedDeviceItems.length}}" onclick={{action "select"}}>
-            {{/if}}
+            {{!-- {{#if this.component_type}} --}}
+            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedItems.length}}" onclick={{action "select"}}>
+            {{!-- {{else}} --}}
+            {{!-- <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedDeviceItems.length}}" onclick={{action "select"}}>
+            {{/if}} --}}
 
         </div>
         
