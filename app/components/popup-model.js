@@ -29,13 +29,6 @@ export default Component.extend({
     },
     didReceiveAttrs(){
         let self =this;
-        // window.addEventListener('keyup',(event)=>{
-        //     console.log("inside keypres");
-        //     if(event.key =="Escape"){
-        //         this.set("modelFlag", false);
-        //         console.log(this.isDestroyed);
-        //     }
-        // });
         function closeComponent(event){
             if(event.key =="Escape"){
                 self.set("modelFlag", false);
@@ -48,9 +41,18 @@ export default Component.extend({
             window.addEventListener('keyup',closeComponent);
         }
     },
+    // closeComponent(event,self){
+    //     if(event.key =="Escape"){
+    //         self.set("modelFlag", false);
+    //         // console.log(this.isDestroyed);
+    //         window.removeEventListener('keyup',this.closeComponent(this));
+    //     }
+
+    // },
     actions: {
         close() {
-            this.set("modelFlag", !(this.get("modelFlag")));
+            this.set("modelFlag", !(this.modelFlag));
+            // window.removeEventListener('keyup',this.closeComponent);
         },
         select() {
             localStorage.setItem(`selected${this.type}Items`, JSON.stringify(this.selectedItems));

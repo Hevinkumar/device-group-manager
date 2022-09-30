@@ -2,8 +2,8 @@ import Controller from '@ember/controller';
 import { A } from "@ember/array";
 
 export default Controller.extend({
-    groupModel: false,
-    deviceModel: false,
+    // groupModel: false,
+    // deviceModel: false,
     type: null,
     modelData: A([]),
     selectedItems: A([]),
@@ -69,13 +69,8 @@ export default Controller.extend({
     },
     actions: {
         openGroups() {
-            // this.model.set("popupGroups",true);
             this.set("modelData", A([]));
-            this.set("selectedItems", A([]));
-            this.set("deviceModel", false);
-            this.set("groupModel", true);
             this.set("type", "groups");
-            // this.set('selectedItems', JSON.parse(localStorage.getItem('selectedGroupItems')) || A([]));
             let [temp,category]=this.setModelData(this.model.groups,this.type);
             this.set("modelData", A(temp));
             this.set("category",A(category));
@@ -84,8 +79,8 @@ export default Controller.extend({
         openDevices() {
             // this.model.set("popupDevices",true);
             this.set("modelData", A([]));
-            this.set("groupModel", false);
-            this.set("deviceModel", true);
+            // this.set("groupModel", false);
+            // this.set("deviceModel", true);
             this.set("type", "devices");
             // this.set('selectedItems', JSON.parse(localStorage.getItem('selectedDeviceItems')) || A([]));
             let [temp,category]=this.setModelData(this.model.devices,this.type);
