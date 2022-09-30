@@ -29,17 +29,24 @@ export default Component.extend({
     },
     didReceiveAttrs(){
         let self =this;
-        window.addEventListener('keyup',(event)=>{
-            console.log("inside keypres");
-            // console.log(self,"this");
-            // this.set("modelFlag",this.modelFlag);
+        // window.addEventListener('keyup',(event)=>{
+        //     console.log("inside keypres");
+        //     if(event.key =="Escape"){
+        //         this.set("modelFlag", false);
+        //         console.log(this.isDestroyed);
+        //     }
+        // });
+        function closeComponent(event){
             if(event.key =="Escape"){
-                console.log(!(self.get("modelFlag")),'modelFlagValue');
-                this.set("modelFlag", false);
-                console.log(this.isDestroyed);
-                // set(self ,"modelFlag", !(self.get("modelFlag")) )
+                self.set("modelFlag", false);
+                // console.log(this.isDestroyed);
+                window.removeEventListener('keyup',closeComponent);
             }
-        });
+
+        }
+        if(this.modelFlag){
+            window.addEventListener('keyup',closeComponent);
+        }
     },
     actions: {
         close() {

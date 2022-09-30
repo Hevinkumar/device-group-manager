@@ -15,8 +15,4 @@ export default Route.extend({
                 popupDevices:false,
             });
     },
-
-    afterModel(){
-        
-    }
 });

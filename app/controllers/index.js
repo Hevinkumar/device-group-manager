@@ -6,14 +6,6 @@ export default Controller.extend({
     deviceModel: false,
     type: null,
     modelData: A([]),
-    tempData: {
-        id: null,
-        title: "",
-        data: A([]),
-        subtitle: "",
-        icon: "",
-        selected: false,
-    },
     selectedItems: A([]),
     category:A([]),
     modelFlag:false,
@@ -38,7 +30,7 @@ export default Controller.extend({
             this.tempData.type = ele.type;
 
             if (this.type == "groups") {
-                console.log(ele.data);
+                // console.log(ele.data);
                 let temp = ele.data.length
                 this.tempData.subtitle = `${temp} devices`;
                 this.tempData.data = ele.data;
@@ -72,8 +64,6 @@ export default Controller.extend({
                 category.pushObject(ele.type);
             }
         });
-        // console.log("called",temp);
-        // console.log(category);
         return [temp,category];
 
     },
