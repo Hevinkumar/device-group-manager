@@ -204,13 +204,13 @@
     outline:1.5px solid rgba(0, 157, 255, 0.888);
     box-shadow:0px 0px 5px rgba(0, 157, 255, 0.888);
 }
-.search-bar input[type=text]{
-    padding: 7px 9px;
-    // border: 1px solid var(--primary);
-    font-size: 13px;
-    font-family: Lato,Roboto,sans-serif;
-    font-weight: 400;
-}
+// .search-bar input[type=text]{
+//     padding: 7px 9px;
+//     // border: 1px solid var(--primary);
+//     font-size: 13px;
+//     font-family: Lato,Roboto,sans-serif;
+//     font-weight: 400;
+// }
 .cls-button{
     font-weight: 1000;
     cursor: pointer;
@@ -260,7 +260,8 @@
     transition: 200ms;
 }
 .group-container:hover{
-    background-color: rgba(246, 253, 253, 0.927);
+    // background-color: rgba(246, 253, 253, 0.927);
+    border-color: rgba(0, 157, 255, 0.888) ;
 
 }
 
