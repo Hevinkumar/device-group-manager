@@ -53,6 +53,7 @@ export default Component.extend({
             this.set("displaydata", this.model);
             this.set("modelFlag", !(this.get("modelFlag")));
             this.set("selectedItems", A([]));
+            window.removeEventListener('keyup',this.closeComponent);
         },
         selectToggle(item){
             let temp = A([]);

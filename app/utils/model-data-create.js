@@ -13,7 +13,7 @@ export default function modelDataCreate(modelData,type) {
   if (type == "groups"){
     selectedItems = JSON.parse(localStorage.getItem('selectedGroupItems')) || A([]);
   }
-  else if(typr == "devices"){
+  else if(type == "devices"){
     selectedItems = JSON.parse(localStorage.getItem('selectedDeviceItems')) || A([]);
 
   }
