@@ -123,14 +123,14 @@
     }
 
 }
-@keyframes popupModelClose{
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
+// @keyframes popupModelClose{
+//     from {
+//         opacity: 1;
+//     }
+//     to {
+//         opacity: 0;
+//     }
+// }
 .popup-model.active{
     animation: popupModelOpen 300ms forwards;
     pointer-events: all;
