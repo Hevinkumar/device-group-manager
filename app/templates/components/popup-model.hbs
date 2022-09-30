@@ -1,9 +1,8 @@
 
-{{!-- {{log this.model "model"}} --}}
-<div class="popup-model bt-radious bb-radious">
-    <div class="popup-container">
+<div class={{if this.modelFlag "popup-model active" "popup-model"}}>
+    <div class="popup-container bt-radious bb-radious">
         <div class="header popup-header bt-radious bg-color-white">
-            <span class="blue"> Select {{this.type}} </span> 
+            <span class="blue heading-font"> Select {{this.type}} </span> 
             <span class="cls-button" onclick={{action "close"}}>&#215;</span>
         </div>
         <div class="search-bar bg-color-white">
@@ -15,86 +14,21 @@
                 <option value="{{item}}">{{item}}</option>
                 {{/each}}
             </select>
-            {{!-- {{#if this.component_type}}
-            <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
-                <option value="">All</option>
-                {{#each this.category as |item|}}
-                <option value="{{item}}">{{item}}</option>
-                {{/each}}
-            </select>
-            {{else}}
-            <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
-                <option value="">All</option>
-                {{#each this.category as |item|}}
-                <option value="{{item}}">{{item}}</option>
-                {{/each}}
-
-            </select>
-            {{/if}} --}}
-
             {{input class="input-box" type="text" placeholder="Search..." key-up=(action 'handleFilterEntry') value=value}}
         </div>
         <div class="popup-model-content">
-            {{!-- {{#if this.component_type}} --}}
-            {{!-- {{log this.displaydata}} --}}
             {{#each this.displaydata as |item|}}
-            {{#if item.selected}}
-            <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
-                {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
-                <i class="{{item.icon}} icon"></i>
+            <div class="group-container bg-color-white {{if item.selected "selected"}}"  onclick={{action "selectToggle" item}}>
+                <i class="{{item.icon}} icon icon-color"></i>
                 <div class="group-component">
                     <span class="group-name">{{item.title}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.subtitle}}</span>
+                    <span><i class="fa-solid fa-mobile icon-color"></i> {{item.subtitle}}</span>
                 </div>
-
             </div>
-            {{else}}
-            <div class="group-container bg-color-white " onclick={{action "selectToggle" item}}>
-                {{!-- <i class="fa-sharp fa-solid fa-folder-closed icon"></i> --}}
-                <i class="{{item.icon}} icon"></i>
-                <div class="group-component">
-                    <span class="group-name">{{item.title}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.subtitle}}</span>
-                </div>
-
-            </div>
-             {{/if}}
-                
-            {{/each}}
-            {{!-- {{else}} --}}
-            {{!-- {{#each this.displaydata as |item|}}
-            {{#if item.selected}}
-            <div class="group-container bg-color-white selected" onclick={{action "selectToggle" item}}>
-                <i class="{{item.icon}} icon"></i>
-                <div class="group-component">
-                    <span>{{item.device}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>
-                </div>
-
-            </div>
-            {{else}}
-            <div class="group-container bg-color-white" onclick={{action "selectToggle" item}}>
-                <i class="{{item.icon}} icon"></i>
-                <div class="group-component">
-                    <span>{{item.device}}</span>
-                    <span><i class="fa-solid fa-mobile"></i> {{item.name}}</span>
-                </div>
-
-            </div>
-            {{/if}}
-
-
-            {{/each}}
-            {{/if}} --}}
-
+            {{/each}}  
         </div>
         <div class="popup-model-footer bg-color-white bb-radious">
-            {{!-- {{#if this.component_type}} --}}
-            <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedItems.length}}" onclick={{action "select"}}>
-            {{!-- {{else}} --}}
-            {{!-- <input type="button" class="footer-select-btn bb-radious bt-radious" value="Select {{this.selectedDeviceItems.length}}" onclick={{action "select"}}>
-            {{/if}} --}}
-
+            <input type="button" class="select-btn btn-br {{if this.selectedItems.length "bg-color-primary" "bg-color-gray"}}" value="Select ({{this.selectedItems.length}})" onclick={{action "select"}}>
         </div>
         
     </div>

@@ -1,6 +1,7 @@
 :root{
     --light-gray:rgb(173, 170, 170);
     --success:rgb(7, 182, 7);
+    --primary:skyblue;
 }
 
 *{
@@ -9,6 +10,59 @@
     padding: 0;
 
 }
+// {!--utility classes in  commmon--}
+.bt-radious{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.bb-radious{
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius:  12px;
+}
+.padding-h{
+    padding: 5px;
+}
+.bg-color-lightgray{
+    background-color: lightgray;
+}
+.bg-color-white{
+    background-color: white;
+}
+.bg-color-gray{
+    background-color: gray;
+}
+.bg-color-primary{
+    background-color: rgba(0, 157, 255, 0.888) ;
+}
+.blue{
+    color: rgba(0, 157, 255, 0.888) !important;
+}
+.selected{
+    background-color: rgba(246, 253, 253, 0.927) !important;
+    border-color:rgba(0, 157, 255, 0.888) !important;
+}
+.heading-font{
+    font-size: 20px;
+}
+.btn-br{
+    border-radius: 5px;
+}
+.select-btn{
+    padding: 10px 15px;
+    // background-color: rgb(192, 192, 193);
+    border: none;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+.icon-color{
+    color:gray
+}
+
+
+
+
+// Header designs
 .header{
     display: flex;
     align-items: center;
@@ -22,18 +76,6 @@
     /* border-top: 2px solid black; */
     border-bottom: 1px solid var(--light-gray);
 
-}
-.padding-h{
-    padding: 5px;
-}
-.bg-color{
-    background-color: lightgray;
-}
-.bg-color-white{
-    background-color: white;
-}
-.blue{
-    color: blue;
 }
 
 .btn-model{
@@ -52,7 +94,6 @@
 }
 .btn-light{
     background-color: white;
-
 }
 .popup-model{
     display: flex;
@@ -68,7 +109,40 @@
     bottom: 0;
     width: 100%;
     height: 100vh;
+    // transition: 1000ms;
+    
+    opacity: 0;
+    pointer-events: none;
 }
+@keyframes popupModelOpen{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+@keyframes popupModelClose{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.popup-model.active{
+    animation: popupModelOpen 300ms forwards;
+    pointer-events: all;
+    
+}
+.poup-model.inactive{
+    animation: popupModelClose 300ms forwards;
+    pointer-events: none;
+}
+// .popup-model-false{
+//     display:none;
+// }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .popup-model{
@@ -82,7 +156,7 @@
   }
 .popup-container{
     margin:150px;
-    border-radius: 5px;
+    // border-radius: 5px;
     background-color:rgb(241, 241, 241);
     width: 80%;
     height: auto;   
@@ -121,9 +195,21 @@
 }
 .input-box{
     border: none;
-    width: 30%;
-    padding: 5px;
-    /* background-color: lightgrey; */
+    outline:none;
+    width: 80%;
+    padding: 5px 10px;
+}
+.input-box:focus{
+    // outline:1.5px solid rgba(0, 157, 255, 0.888);
+    outline:1.5px solid rgba(0, 157, 255, 0.888);
+    box-shadow:0px 0px 5px rgba(0, 157, 255, 0.888);
+}
+.search-bar input[type=text]{
+    padding: 7px 9px;
+    // border: 1px solid var(--primary);
+    font-size: 13px;
+    font-family: Lato,Roboto,sans-serif;
+    font-weight: 400;
 }
 .cls-button{
     font-weight: 1000;
@@ -142,14 +228,7 @@
     background-color: lightgrey;
     border-radius: 50%;
 }
-.bt-radious{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.bb-radious{
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius:  5px;
-}
+
 
 
 /* this is popup model designs */
@@ -177,18 +256,20 @@
     margin-left: 10px;
     padding: 10px;
     border-radius: 5px;
-    // background-color: white;
-    /* box-shadow: -5px 5px 5px 0px rgba(130, 123, 123,0.3); */
     cursor: pointer;
+    transition: 200ms;
 }
-.selected{
-    background-color: cornsilk !important;
+.group-container:hover{
+    background-color: rgba(246, 253, 253, 0.927);
+
 }
+
 .icon{
     height: 100%;
     width :30%;
     /* margin: 10px; */
     font-size: 30px;
+    
 }
 .group-component{
     display: flex;
@@ -205,12 +286,6 @@
     // background-color: white;
     
 }
-.footer-select-btn{
-    padding: 10px;
-    background-color: rgb(192, 192, 193);
-    border: 0;
-    font-weight: 700;
-    cursor: pointer;
-}
+
 
 

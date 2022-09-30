@@ -12,6 +12,7 @@ export default Component.extend({
     backupdata: A([]),
     category: A([]),
 
+
     init() {
         this._super(...arguments);
         console.log(this.model);
@@ -21,17 +22,33 @@ export default Component.extend({
         this.set("backupdata", this.model);
         this.set("category", this.category);
         this.set("selectedItems", JSON.parse(localStorage.getItem(`selected${this.type}Items`)) || A([]));
+        console.log(this);
+        // this.set('modelFlag',this.modelFlag);
 
 
     },
+    didReceiveAttrs(){
+        let self =this;
+        window.addEventListener('keyup',(event)=>{
+            console.log("inside keypres");
+            // console.log(self,"this");
+            // this.set("modelFlag",this.modelFlag);
+            if(event.key =="Escape"){
+                console.log(!(self.get("modelFlag")),'modelFlagValue');
+                this.set("modelFlag", false);
+                console.log(this.isDestroyed);
+                // set(self ,"modelFlag", !(self.get("modelFlag")) )
+            }
+        });
+    },
     actions: {
         close() {
-            this.set("component", !(this.get("component")));
+            this.set("modelFlag", !(this.get("modelFlag")));
         },
         select() {
             localStorage.setItem(`selected${this.type}Items`, JSON.stringify(this.selectedItems));
             this.set("displaydata", this.model);
-            this.set("component", !(this.get("component")));
+            this.set("modelFlag", !(this.get("modelFlag")));
             this.set("selectedItems", A([]));
         },
         selectToggle(item){
