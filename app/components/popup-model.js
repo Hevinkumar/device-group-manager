@@ -30,6 +30,7 @@ export default Component.extend({
     didReceiveAttrs(){
         let self =this;
         function closeComponent(event){
+            console.log(event);
             if(event.key =="Escape"){
                 self.set("modelFlag", false);
                 // console.log(this.isDestroyed);
@@ -37,22 +38,15 @@ export default Component.extend({
             }
 
         }
+        this.set("closeComponent",closeComponent);
         if(this.modelFlag){
             window.addEventListener('keyup',closeComponent);
         }
     },
-    // closeComponent(event,self){
-    //     if(event.key =="Escape"){
-    //         self.set("modelFlag", false);
-    //         // console.log(this.isDestroyed);
-    //         window.removeEventListener('keyup',this.closeComponent(this));
-    //     }
-
-    // },
     actions: {
         close() {
             this.set("modelFlag", !(this.modelFlag));
-            // window.removeEventListener('keyup',this.closeComponent);
+            window.removeEventListener('keyup',this.closeComponent);
         },
         select() {
             localStorage.setItem(`selected${this.type}Items`, JSON.stringify(this.selectedItems));
