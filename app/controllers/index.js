@@ -77,12 +77,8 @@ export default Controller.extend({
             this.set("modelFlag",true);
         },
         openDevices() {
-            // this.model.set("popupDevices",true);
             this.set("modelData", A([]));
-            // this.set("groupModel", false);
-            // this.set("deviceModel", true);
             this.set("type", "devices");
-            // this.set('selectedItems', JSON.parse(localStorage.getItem('selectedDeviceItems')) || A([]));
             let [temp,category]=this.setModelData(this.model.devices,this.type);
             this.set("modelData", A(temp));
             this.set("category",A(category));

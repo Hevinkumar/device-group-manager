@@ -10,24 +10,22 @@
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <select class="select dropdown-selector" onchange={{action "handleProductFilter"}}>
                 <option value="">All</option>
-                {{log this.category "category"}}
+                {{!-- {{log this.category "category"}} --}}
                 {{#each this.category as |item|}}
                 <option value="{{item}}">{{item}}</option>
                 {{/each}}
             </select>
             {{input class="input-box" type="text" placeholder="Search..." key-up=(action 'handleFilterEntry') value=value}}
         </div>
-        <div class="popup-model-content">
-            {{#each this.displaydata as |item|}}
-            <div class="group-container bg-color-white {{if item.selected "selected"}}"  onclick={{action "selectToggle" item}}>
-                <i class="{{item.icon}} icon icon-color"></i>
-                <div class="group-component">
-                    <span class="group-name">{{item.title}}</span>
-                    <span><i class="fa-solid fa-mobile icon-color"></i> {{item.subtitle}}</span>
-                </div>
-            </div>
-            {{/each}}  
-        </div>
+        {{!-- <div class="popup-model-content"> --}}
+            {{#if this.deviceComponent}}
+            {{device-component displaydata = this.displaydata selectedItems=this.selectedItems selectToggle = (action "selectToggle")}}
+            {{/if}}
+
+            {{#if this.groupComponent}}
+            {{group-component displaydata = this.displaydata selectedItems=this.selectedItems selectToggle = (action "selectToggle")}}
+            {{/if}}
+        {{!-- </div> --}}
         <div class="popup-model-footer bg-color-white bb-radious">
             <input type="button" class="select-btn btn-br {{if this.selectedItems.length "bg-color-primary" "bg-color-gray"}}" value="Select ({{this.selectedItems.length}})" onclick={{action "select"}}>
         </div>

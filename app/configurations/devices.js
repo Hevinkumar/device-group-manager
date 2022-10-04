@@ -11,9 +11,9 @@ export const devices = [
     {
         id: 1,
         group: "Deveolpment",
-        title: "vivo-1012",
+        title: "vivo-1012-rmx-zion",
         type: "ios",
-        subtitle: "riyas",
+        subtitle: "riyas-sdfnskfndfnsdfsdnn",
         icon: "fa-brands fa-apple",
         data: null,
     },

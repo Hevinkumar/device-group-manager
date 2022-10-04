@@ -2,12 +2,14 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var nodeSass = require("node-sass");
+var emberTooltips = require("ember-tooltips")
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     sassOptions: {
       implementation: nodeSass,
     },
+    
     // Add options here
   });
 
