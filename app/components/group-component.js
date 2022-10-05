@@ -14,10 +14,10 @@ export default Component.extend({
         let sub_title =this.$(".sub-title");
         for(let i =0 ;i < title.length;i++){
             // console.log(title[i]);
-            if(title[i].innerText.length > 15){
+            if(title[i].innerText.length > 20){
                 title[i].parentNode.classList.add("show-tooltip-up");
             }
-            if(sub_title[i].innerText.length > 12){
+            if(sub_title[i].innerText.length > 18){
                 sub_title[i].parentNode.classList.add("show-tooltip-down");
             }
         }

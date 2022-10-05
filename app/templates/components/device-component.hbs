@@ -3,11 +3,11 @@
     <div class="group-container bg-color-white {{if item.selected " selected"}}" onclick={{action "selectToggleItem" item}}>
         <i class="{{item.icon}} icon {{if item.selected " color-selected" "color-normal" }}"></i>
         <div class="group-component">
-            <div class="title-div {{if item.selected " color-selected" " color-normal" }}">
+            <div class="div-ellipsis {{if item.selected " color-selected" " color-normal" }}">
                 <span class="tooltiptext-up">{{item.title}}</span>
                 <span class="title " value="{{item.title}}">{{item.title}}</span>
             </div>
-            <div class="subtitle-div {{if item.selected " color-selected" " color-normal"}}">
+            <div class="div-ellipsis {{if item.selected " color-selected" " color-normal"}}">
                 <span class="sub-title"><i class="fa-solid fa-mobile "></i> {{item.subtitle}}</span>
                 <span class="tooltiptext-down">{{item.subtitle}}</span>
             </div>
