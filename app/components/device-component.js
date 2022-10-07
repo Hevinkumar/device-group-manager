@@ -8,11 +8,14 @@ export default Component.extend({
     init() {
         this._super(...arguments);
         this.set("loading",false);
+        
         if(this.displaydata.length > 25){
             this.set("display_overflow",true);
+            this.set('flag',true);
         }
         else{
             this.set("display_overflow",false);
+            this.set('flag',false);
         }
     },
 
@@ -51,6 +54,7 @@ export default Component.extend({
                         }
                         // console.log(self.viewData);
                         self.set("loading",false);
+                        self.set("flag",true);
                         // console.log(modelLength, displaydataLength);
                     }, 1000);
                 }
@@ -65,26 +69,27 @@ export default Component.extend({
                             }
                         }
                         self.set("loading",false);
+                        self.set("flag",true);
 
                     }, 1000);
 
                 }
             }
         }
-        let flag = true;
+        if(self.flag){
         myDiv.scroll(function () {
             // self.set("loading",true);
             let scroll = Math.round((((myDiv.scrollTop() + myDiv[0].offsetHeight) / myDiv[0].scrollHeight)) * 100);
             let scrollHeight = Math.round((myDiv[0].scrollHeight / myDiv[0].scrollHeight)) * 100
             if (self.model.length != self.displaydata.length){
-                // console.log("inside scroll");
                 if (scroll == scrollHeight) {
                     self.set("loading",true);
-                    
+                    self.set("flag",false);
                     addData();
                 }
             }
         });
+        }
     },
 
     actions: {
