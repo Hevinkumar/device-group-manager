@@ -1,8 +1,9 @@
 <div class="popup-model-content">
+    {{!-- {{log this.displaydata}} --}}
     {{#each this.displaydata as |item|}}
-    <div class="group-container bg-color-white {{if item.selected " selected"}}" onclick={{action "selectToggleItem" item}}>
+    <div class="group-container bg-color-white {{if item.selected " selected"}} {{if this.display_overflow "min-wid" "max-wid"}}" onclick={{action "selectToggleItem" item}}>
         <i class="{{item.icon}} icon {{if item.selected " color-selected" "color-normal" }}"></i>
-        <div class="group-component">
+        <div class="group-component ">
             <div class="div-ellipsis {{if item.selected " color-selected" " color-normal" }}">
                 <span class="tooltiptext-up">{{item.title}}</span>
                 <span class="title " value="{{item.title}}">{{item.title}}</span>
@@ -14,5 +15,11 @@
         </div>
     </div>
     {{/each}}
+    {{!-- {{log this.loading}} --}}
+    {{#if this.loading}}
+        <div class="loading">
+            <img src="images/spinner.gif" alt="">
+        </div>
+    {{/if}}
 </div>
 {{yield}}

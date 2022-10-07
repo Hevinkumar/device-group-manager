@@ -22,6 +22,14 @@ export default Component.extend({
             }
         }
         // console.log(title);
+        if(this.displaydata.length > 25){
+            this.set("display_overflow",true);
+        }
+        else{
+            this.set("display_overflow",false);
+        }
+        
+
     },
 
     actions:{

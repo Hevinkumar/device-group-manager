@@ -11,18 +11,15 @@ export default Component.extend({
     displaydata: A([]),
     backupdata: A([]),
     category: A([]),
+    viewData:A([]),
 
 
     init() {
         this._super(...arguments);
-        // console.log(this.model);
-        // console.log(this.category);
-        // console.log(this.type);
         this.set("displaydata", this.model);
         this.set("backupdata", this.model);
         this.set("category", this.category);
         this.set("selectedItems", JSON.parse(localStorage.getItem(`selected${this.type}Items`)) || A([]));
-        // console.log(this);
         if (this.type == "groups") {
             this.set("groupComponent", true);
         }
@@ -41,6 +38,15 @@ export default Component.extend({
         if (this.modelFlag) {
             window.addEventListener('keyup', closeComponent);
         }
+
+        if (this.model.length > 25) {
+            this.set("viewDataInitial", this.model.slice(0, 30));
+        }
+        else {
+            this.set("viewDataInitial", this.model);
+        }
+        // console.log(this.displaydata);
+        this.set("displaydata",this.viewDataInitial);
 
 
     },
@@ -111,7 +117,7 @@ export default Component.extend({
                 })
                 this.set("displaydata", filteredResults);
             } else {
-                this.set("displaydata", this.backupdata);
+                this.set("displaydata", this.viewDataInitial);
             }
         },
         handleProductFilter(e) {
@@ -120,7 +126,7 @@ export default Component.extend({
             this.set("displaydata", this.backupdata);
             let filteredData;
             if (value == "") {
-                filteredData = this.backupdata;
+                filteredData = this.viewDataInitial;
             }
             else {
                 filteredData = this.displaydata.filter(ele => {

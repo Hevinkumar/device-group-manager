@@ -1,6 +1,6 @@
 <div class="popup-model-content">
     {{#each this.displaydata as |item|}}
-    <div class="group-container  bg-color-white {{if item.selected " selected"}}" onclick={{action "selectToggleItem" item}}>
+    <div class="group-container  bg-color-white {{if item.selected " selected"}} {{if this.display_overflow "min-wid" "max-wid"}}" onclick={{action "selectToggleItem" item}}>
         <i class="{{item.icon}} icon {{if item.selected " color-selected" "color-normal" }}"></i>
         <div class="group-component">
             <div class="div-ellipsis {{if item.selected " color-selected" " color-normal" }}">
